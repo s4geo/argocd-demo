@@ -19,6 +19,7 @@ jobs:
 
     - name: Bundle install
       run: |
+	export PATH=$JAVA_HOME/bin:/usr/local/opt/ruby/bin:/usr/local/bin:$PATH
         gem install bundler
         bundle config path vendor/bundle
         bundle install --jobs 4 --retry 3
