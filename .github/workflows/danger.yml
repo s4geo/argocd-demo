@@ -19,9 +19,14 @@ jobs:
 
     - name: Bundle install
       run: |
+        bundle update --ruby
+
+    - name: Bundle install
+      run: |
         gem install bundler
         bundle config path vendor/bundle
         bundle install --jobs 4 --retry 3
+        bundle update --ruby
 
     - name: Run danger
       run: |
