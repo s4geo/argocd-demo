@@ -9,6 +9,8 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: '3.0' # Not needed with a .ruby-version file
     - run: bundle exec rake
     - uses: actions/cache@v1
       with:
